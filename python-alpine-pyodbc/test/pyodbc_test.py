@@ -6,7 +6,7 @@ import pyodbc
 def pyodbc_localhost():
     driver = '/usr/lib/libtdsodbc.so'  # NOT THE MOST ELEGANT WAY, BUT WE'RE TELLING PYODBC WHERE TO FIND THE FREETDS DRIVER
     try:
-        cnxn = pyodbc.connect('DRIVER='+driver+';SERVER=<serverIP or docker.host.internal>;PORT=1433;DATABASE=<dbname>;UID=<dbuser>;PWD=<dbuserpassword>')
+        cnxn = pyodbc.connect('DRIVER='+driver+';SERVER=<serverIP or host.docker.internal>;PORT=1433;DATABASE=<dbname>;UID=<dbuser>;PWD=<dbuserpassword>')
     except Exception as e:
         print(f"Couldn't connect to db on localhost because {e}")
     else:
